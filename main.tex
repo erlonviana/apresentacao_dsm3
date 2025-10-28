@@ -1,0 +1,367 @@
+\documentclass[10pt]{beamer}
+
+% =====================
+% PACOTES
+% =====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{helvet}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{tabularx} % <-- pacote para tabela ajustável
+\renewcommand{\familydefault}{\sfdefault}
+
+% =====================
+% CORES INSTITUCIONAIS CPS
+% =====================
+\definecolor{cpsvermelho}{HTML}{B8102F}
+\definecolor{cpspreto}{RGB}{0,0,0}
+\definecolor{cpsbranco}{RGB}{255,255,255}
+\definecolor{verdeBuba}{HTML}{00C400}
+
+% =====================
+% TEMA BEAMER
+% =====================
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{frametitle}{}
+
+% =====================
+% PALETA DE CORES CPS
+% =====================
+\setbeamercolor{title}{fg=cpsbranco,bg=cpsvermelho}
+\setbeamercolor{frametitle}{fg=cpsbranco,bg=cpsvermelho}
+\setbeamercolor{normal text}{fg=cpspreto,bg=cpsbranco}
+\setbeamercolor{structure}{fg=cpsvermelho}
+
+% =====================
+% FONTES
+% =====================
+\setbeamerfont{title}{size=\Huge,series=\bfseries}        % Título principal
+\setbeamerfont{frametitle}{size=\normalsize,series=\mdseries}  % Títulos dos slides
+\setbeamerfont{subtitle}{size=\Large}                     % Subtítulo
+\setbeamerfont{author}{size=\large}                       % Autor
+\setbeamerfont{institute}{size=\normalsize}               % Instituto
+\setbeamerfont{date}{size=\normalsize}                    % Data
+
+% =====================
+% CONFIGURAÇÃO DAS CAIXAS DE TEXTO
+% =====================
+\tcbset{
+  bubabox/.style={
+    colback=white,
+    colframe=verdeBuba,
+    boxrule=1pt,
+    arc=5pt,
+    left=6pt,
+    right=6pt,
+    top=4pt,
+    bottom=4pt,
+    shadow={0.8mm}{-0.8mm}{0mm}{gray!40},
+    width=0.95\textwidth,
+    fontupper=\small,
+    halign=center
+  }
+}
+
+% =====================
+% LOGO CPS
+% =====================
+\pgfdeclareimage[height=1cm]{cpslogo}{logo-cps}
+
+% =======================================================
+% FOOTLINE (APENAS NUMERAÇÃO)
+% =======================================================
+\setbeamertemplate{footline}{%
+  \hfill%
+  \textcolor{cpsvermelho}{\insertframenumber/\inserttotalframenumber}%
+  \hspace{1em}%
+}
+\setbeamertemplate{navigation symbols}{}
+
+% =======================================================
+% HEADLINE
+% =======================================================
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.8ex,dp=1.25ex,leftskip=1em]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}%
+}
+
+% =====================
+% CAPA (MODIFICADA)
+% =====================
+\setbeamertemplate{title page}{
+    \vbox{}
+    \vspace{2cm}
+    \begin{center}
+        {\usebeamerfont{title}\textcolor{cpsvermelho}{\Huge\bfseries\inserttitle}\par}
+        \vspace{1cm}
+        {\usebeamerfont{subtitle}\Large\insertsubtitle\par}
+        \vspace{1cm}
+        {\usebeamerfont{author}\normalsize\insertauthor\par}
+        \vspace{0.5cm}
+        {\usebeamerfont{institute}\small\insertinstitute\par}  % <-- MUDEI para \small
+        \vspace{0.5cm}
+        {\usebeamerfont{date}\small\insertdate\par}  % <-- MUDEI para \small
+    \end{center}
+}
+
+% =====================
+% METADADOS
+% =====================
+\title[Greenrise]{Greenrise}  % <-- AQUI você muda o texto do título
+\subtitle{Ambiente autônomo para fazendas verticais orientado por redes neurais}
+\author[Seu Nome]{\textbf{Érlon Viana, Andrei, Ricardo Estevam, Leandro Sueoka}}
+\institute[Centro Paula Souza]{Centro Paula Souza}
+\date{FATEC Registro}
+
+% =====================
+% DOCUMENTO
+% =====================
+\begin{document}
+
+% CAPA
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% =======================================================
+% SLIDE AGENDA
+% =======================================================
+\begin{frame}{Agenda da Apresentação} 
+    \tableofcontents
+\end{frame}
+
+% =======================================================
+% SLIDE PITCH
+% =======================================================
+\section{Pitch}
+\begin{frame}{Pitch}
+\centering
+{\color{black}\bfseries\LARGE Pitch:}
+
+\vspace{0.5cm}
+\includegraphics[width=0.7\linewidth]{LOGOMARCA.png}
+\end{frame}
+
+% =======================================================
+% SLIDE PROBLEMATIZAÇÃO
+% =======================================================
+\section{Problematização}
+\begin{frame}{Problematização}
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{hortalica.jpg}
+    
+    \vspace{0.1cm}
+    {\footnotesize
+    \textcolor{cpspreto}{Fonte: Autoria própria (2024)}
+    }
+    
+    \column{0.55\textwidth}
+    \raggedright
+    \hspace{0.8cm}\begin{minipage}{0.85\linewidth}
+    {\small\textcolor{cpspreto}{Como utilizar redes neurais em conjunto com IoT para tornar fazendas verticais mais autônomas, reduzindo custos operacionais, aumentando a eficiência no uso de recursos naturais e mantendo um valor acessível?}}
+    \end{minipage}
+
+\end{columns}
+
+\end{frame}
+
+% =======================================================
+% SLIDE ESTADO DA ARTE (ajustado)
+% =======================================================
+\section{Estado da Arte}
+\begin{frame}{Estado da Arte}
+
+\renewcommand{\arraystretch}{1.5}
+\scriptsize
+
+\begin{table}[h!]
+\centering
+\rowcolors{2}{gray!10}{white}
+
+\begin{tabularx}{0.98\linewidth}{|>{\raggedright\arraybackslash}p{2.3cm}|
+                                  >{\raggedright\arraybackslash}X|
+                                  >{\raggedright\arraybackslash}X|
+                                  >{\raggedright\arraybackslash}X|}
+\hline
+\rowcolor{cpsvermelho!90}
+\textbf{\textcolor{white}{Estudo}} &
+\textbf{\textcolor{white}{Foco Principal}} &
+\textbf{\textcolor{white}{Soluções Apontadas}} &
+\textbf{\textcolor{white}{Limitações}} \\ \hline
+
+Saraswathy et al. (2020) &
+Integrar IA e IoT em uma fazenda hidropônica &
+Uso de uma rede neural recorrente (RNN) &
+Não foca na agricultura vertical e tem alto custo. \\ \hline
+
+Rakhmatulin (2021)  &
+Produção autônoma de hortaliça &
+Rede neural e IoT para monitoramento de hortaliça &
+Foco na agricultura convencional e tem alto custo. \\ \hline
+
+Souza (2023)  &
+Supervisão de fazendas verticais &
+IoT e sensores para monitoramento da produção &
+Não utiliza IA \\ \hline
+
+Ahmareen et al. (2024)  &
+Supervisão de fazendas verticais &
+IoT e sensores para monitoramento da produção a um custo acessível &
+Não utiliza IA \\ \hline
+
+\textbf{Este trabalho} &
+Uma fazenda vertical autônoma de baixo custo &
+Sistema de IA combinada com sensores IoT (fertilizante e nível da água). &
+Manter o custo acessível mantendo sem perdas significativas na autonomia\\ \hline
+
+\end{tabularx}
+\end{table}
+
+\end{frame}
+
+% =======================================================
+% SLIDE OBJETIVO
+% =======================================================
+\section{Objetivo}
+\begin{frame}{Objetivo}
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.6\textwidth}
+    \begin{enumerate}
+        \setlength{\itemsep}{10pt}
+        \item Projetar e implementar um sistema web e IoT
+        \item Desenvolver e treinar um modelo de Rede Neural
+        \item Propor uma arquitetura de hardware/software de baixo custo
+    \end{enumerate}
+
+    \column{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagens/LOGO PI.png}  % <-- REDUZIDO para 70%
+\end{columns}
+
+\end{frame}
+
+% =======================================================
+% SLIDE METODOLOGIA AJUSTADO (MANTENDO O RODAPÉ DO TEMA BEAMER)
+% =======================================================
+\section{Metodologia}
+\begin{frame}{Metodologia}
+
+\centering
+\normalsize 
+
+% Aumentamos o espaçamento vertical das imagens para liberar mais margem inferior
+
+% Primeira linha de componentes
+\begin{columns}[T,onlytextwidth]
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{antena.jpg}\\[0.2cm] 
+  \textbf{Antena}
+
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{esp 32.jpg}\\[0.2cm]
+  \textbf{ESP 32}
+
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{Gigabit AC1300 Archer C6.jpg}\\[0.2cm]
+  \textbf{Gigabit AC1300 Archer C6}
+\end{columns}
+
+\vspace{0.3cm} 
+\textcolor{verdeBuba}{\rule{0.9\linewidth}{0.8pt}}
+\vspace{0.3cm}
+
+% Segunda linha de componentes
+\begin{columns}[T,onlytextwidth]
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{MLX90614.jpg}\\[0.2cm]
+  \textbf{MLX90614}
+
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{XD-58C.jpg}\\[0.2cm]
+  \textbf{XD-58C}
+
+  \column{0.33\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{prtg.png}\\[0.2cm]
+  \textbf{PRTG}
+\end{columns}
+
+\end{frame}
+
+
+
+
+% =======================================================
+% SLIDE APRESENTAÇÃO PRÁTICA
+% =======================================================
+\section{Apresentação Prática}
+\begin{frame}{Apresentação Prática}
+\centering
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[height=3.2cm]{mobile.png}\\[0.3cm]
+    {\Large\textbf{\underline{Protótipo}}}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[height=3.2cm]{web.png}\\[0.3cm]
+    {\Large\textbf{\underline{Sistema Web}}}
+\end{columns}
+
+\vspace{0.4cm}
+\begin{center}
+    \textcolor{verdeBuba}{\rule{0.9\linewidth}{1.8pt}}
+\end{center}
+
+\end{frame}
+
+% =======================================================
+% SLIDE RESULTADOS (idêntico ao estilo do slide de Objetivos)
+% =======================================================
+\section{Resultados}
+\begin{frame}{Resultados}
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.6\textwidth}
+
+    \begin{itemize}
+        \setlength{\itemsep}{12pt} % espaçamento entre os itens
+        \item Análise SWOT
+        \item Atualização no banco de dados
+        \item Criação do banco NoSQL
+        \item Atualização do Website
+    \end{itemize}
+
+    \column{0.4\textwidth}
+    \centering
+\end{columns}
+
+\end{frame}
+% =======================================================
+% SLIDE CONCLUSÃO
+% =======================================================
+\section{Conclusão}
+\begin{frame}{Conclusão}
+    \centering
+    \includegraphics[width=0.6\linewidth]{bubatag.png}
+\end{frame}
+
+\end{document}
