@@ -1,8 +1,8 @@
 {
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex",
-            "tools": ["pdflatex"]
+            "name": "pdflatex → pdflatex",
+            "tools": ["pdflatex", "pdflatex"]
         }
     ],
     "latex-workshop.latex.tools": [
@@ -13,12 +13,8 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "%DOC%"
+                "%DOCFILE%"
             ]
         }
-    ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.view.pdf.autoReload.enabled": true,
-    "latex-workshop.view.pdf.zoom": "page-width"
+    ]
 }

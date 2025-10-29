@@ -28,7 +28,6 @@
 % =====================
 \usetheme{Madrid}
 \usecolortheme{default}
-\setbeamertemplate{frametitle}{}
 
 % =====================
 % PALETA DE CORES CPS
@@ -84,13 +83,9 @@
 \setbeamertemplate{navigation symbols}{}
 
 % =======================================================
-% HEADLINE
+% HEADLINE (REMOVIDO - DEIXE O PADRÃO DO MADRID)
 % =======================================================
-\setbeamertemplate{headline}{%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=3.8ex,dp=1.25ex,leftskip=1em]{frametitle}%
-    \usebeamerfont{frametitle}\insertframetitle
-  \end{beamercolorbox}%
-}
+% REMOVA completamente esta seção do headline personalizado
 
 % =====================
 % CAPA (MODIFICADA)
@@ -119,6 +114,8 @@
 \author[Seu Nome]{\textbf{Érlon Viana, Andrei, Ricardo Estevam, Leandro Sueoka}}
 \institute[Centro Paula Souza]{Centro Paula Souza}
 \date{FATEC Registro}
+
+
 
 % =====================
 % DOCUMENTO
@@ -252,60 +249,33 @@ Manter o custo acessível mantendo sem perdas significativas na autonomia\\ \hli
 \end{frame}
 
 % =======================================================
-% SLIDE METODOLOGIA AJUSTADO (MANTENDO O RODAPÉ DO TEMA BEAMER)
+% SLIDE METODOLOGIA
 % =======================================================
 \section{Metodologia}
 \begin{frame}{Metodologia}
 
 \centering
-\normalsize 
 
-% Aumentamos o espaçamento vertical das imagens para liberar mais margem inferior
-
-% Primeira linha de componentes
+% Duas imagens lado a lado com legendas
 \begin{columns}[T,onlytextwidth]
-  \column{0.33\textwidth}
+  \column{0.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{antena.jpg}\\[0.2cm] 
-  \textbf{Antena}
-
-  \column{0.33\textwidth}
+  \includegraphics[width=0.9\linewidth,height=4cm,keepaspectratio]{Fazenda vertical 1.png}\\[0.1cm]
+  {\footnotesize\textcolor{cpspreto}{Fonte: Autoria própria (2024)}}
+  
+  \column{0.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{esp 32.jpg}\\[0.2cm]
-  \textbf{ESP 32}
-
-  \column{0.33\textwidth}
-  \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{Gigabit AC1300 Archer C6.jpg}\\[0.2cm]
-  \textbf{Gigabit AC1300 Archer C6}
+  \includegraphics[width=0.9\linewidth,height=4cm,keepaspectratio]{Fazenda vertical 2.png}\\[0.1cm]
+  {\footnotesize\textcolor{cpspreto}{Fonte: Autoria própria (2024)}}
 \end{columns}
 
-\vspace{0.3cm} 
-\textcolor{verdeBuba}{\rule{0.9\linewidth}{0.8pt}}
-\vspace{0.3cm}
-
-% Segunda linha de componentes
-\begin{columns}[T,onlytextwidth]
-  \column{0.33\textwidth}
-  \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{MLX90614.jpg}\\[0.2cm]
-  \textbf{MLX90614}
-
-  \column{0.33\textwidth}
-  \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{XD-58C.jpg}\\[0.2cm]
-  \textbf{XD-58C}
-
-  \column{0.33\textwidth}
-  \centering
-  \includegraphics[width=\linewidth,height=3.2cm,keepaspectratio]{prtg.png}\\[0.2cm]
-  \textbf{PRTG}
-\end{columns}
+% Parágrafo centralizado abaixo das imagens
+\vspace{0.5cm}
+\begin{center}
+{\small\textcolor{cpspreto}{Sistema integrado de monitoramento e automação para fazendas verticais utilizando IoT e redes neurais para otimização do crescimento vegetal.}}
+\end{center}
 
 \end{frame}
-
-
-
 
 % =======================================================
 % SLIDE APRESENTAÇÃO PRÁTICA
@@ -314,54 +284,50 @@ Manter o custo acessível mantendo sem perdas significativas na autonomia\\ \hli
 \begin{frame}{Apresentação Prática}
 \centering
 
-\begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \centering
-    \includegraphics[height=3.2cm]{mobile.png}\\[0.3cm]
-    {\Large\textbf{\underline{Protótipo}}}
-
-    \column{0.48\textwidth}
-    \centering
-    \includegraphics[height=3.2cm]{web.png}\\[0.3cm]
-    {\Large\textbf{\underline{Sistema Web}}}
-\end{columns}
-
-\vspace{0.4cm}
-\begin{center}
-    \textcolor{verdeBuba}{\rule{0.9\linewidth}{1.8pt}}
-\end{center}
+% Imagem centralizada com legenda
+\includegraphics[height=5cm]{Javascript.jpg}\\[0.3cm]
+{\Large\textbf{\underline{Sistema web}}}
 
 \end{frame}
 
 % =======================================================
-% SLIDE RESULTADOS (idêntico ao estilo do slide de Objetivos)
+% SLIDE RESULTADOS
 % =======================================================
 \section{Resultados}
 \begin{frame}{Resultados}
 
 \begin{columns}[T,onlytextwidth]
-    \column{0.6\textwidth}
-
-    \begin{itemize}
-        \setlength{\itemsep}{12pt} % espaçamento entre os itens
-        \item Análise SWOT
-        \item Atualização no banco de dados
-        \item Criação do banco NoSQL
-        \item Atualização do Website
-    \end{itemize}
-
     \column{0.4\textwidth}
     \centering
+    \includegraphics[width=\textwidth]{mongo.png}
+    
+    \column{0.6\textwidth}
+    \raggedright
+    \begin{minipage}{\linewidth}
+    \hspace{0.5cm}\parbox{0.9\linewidth}{\small\textcolor{cpspreto}{Implementação do sistema web integrado ao banco de dados NoSQL MongoDB para armazenamento dos dados coletados; processamento de informações em tempo real; dashboard interativo.}}
+    \end{minipage}
 \end{columns}
 
 \end{frame}
+
 % =======================================================
 % SLIDE CONCLUSÃO
 % =======================================================
 \section{Conclusão}
 \begin{frame}{Conclusão}
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.4\textwidth}
     \centering
-    \includegraphics[width=0.6\linewidth]{bubatag.png}
+    \includegraphics[width=\textwidth]{imagens/LOGO PI.png}
+    
+    \column{0.6\textwidth}
+    \raggedright
+    \begin{minipage}{\linewidth}
+    \hspace{0.5cm}\parbox{0.9\linewidth}{\small\textcolor{cpspreto}{O projeto demonstra viablidade e potencial. Para os próximos passos precisamos desenvolver os sensores IoT, a Rede Neural e a integração entre todos os sistemas.}}
+    \end{minipage}
+\end{columns}
+
 \end{frame}
 
 \end{document}
