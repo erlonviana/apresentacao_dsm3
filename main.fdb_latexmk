@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1761696336.63064 "c:/Users/Erlon/Desktop/Apresentaçao/apresentacao_dsm3/main.tex" "main.pdf" "main" 1761696338.84055 0
+["pdflatex"] 1761700507.69976 "c:/Users/Erlon/Desktop/Apresentaçao/apresentacao_dsm3/main.tex" "main.pdf" "main" 1761700513.65306 0
   "C:/Users/Erlon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761691664 123976 72b5a7d7975bba47276c9ad4e01a7673 ""
   "C:/Users/Erlon/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1761134785 13321623 48c67509cc9a157110e4cf1d86d46da7 ""
   "C:/Users/Erlon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -218,15 +218,15 @@
   "Fazenda vertical 2.png" 1761691789 606060 ad4905bef1683078fb8bc3076fedd97a ""
   "Javascript.jpg" 1761692815 33115 085006cc0bb06c8f79bf45285394a0fd ""
   "LOGOMARCA.png" 1761683714 65497 a5cded071be928358dbdce5f93db51a3 ""
-  "c:/Users/Erlon/Desktop/Apresentaçao/apresentacao_dsm3/main.tex" 1761696336 10453 0b9793c28f936b39fea777e9c79f37b4 ""
+  "c:/Users/Erlon/Desktop/Apresentaçao/apresentacao_dsm3/main.tex" 1761700505 10461 d19c0f0a7419b743082c4c00d4c04341 ""
   "hortalica.jpg" 1761683714 8503571 82f91a9801827b21ccc56aa3b704dc8c ""
   "imagens/LOGO PI.png" 1761683714 222802 ac9add0aa60853f088de602d43860090 ""
   "logo-cps.png" 1761683714 5372 0f62e974722aeba79d435c55a84bb6e2 ""
-  "main.aux" 1761696338 4076 ea7916587b38d377f7ec5c9f0076ac88 "pdflatex"
-  "main.nav" 1761696338 2363 e644b488fecd992f05cdc3359ece9217 "pdflatex"
-  "main.out" 1761696338 831 04c18a36417156e4db2ee2c0054499dc "pdflatex"
-  "main.tex" 1761696336 10453 0b9793c28f936b39fea777e9c79f37b4 ""
-  "main.toc" 1761696338 416 43a1803c7f7abb5612b765f49d5d7876 "pdflatex"
+  "main.aux" 1761700513 4076 ea7916587b38d377f7ec5c9f0076ac88 "pdflatex"
+  "main.nav" 1761700513 2363 e644b488fecd992f05cdc3359ece9217 "pdflatex"
+  "main.out" 1761700513 831 04c18a36417156e4db2ee2c0054499dc "pdflatex"
+  "main.tex" 1761700505 10461 d19c0f0a7419b743082c4c00d4c04341 ""
+  "main.toc" 1761700513 416 43a1803c7f7abb5612b765f49d5d7876 "pdflatex"
   "mongo.png" 1761693707 105949 0a05aa080b152e7effa154a0dd68056a ""
   (generated)
   "main.aux"
